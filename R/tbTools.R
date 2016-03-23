@@ -342,7 +342,7 @@ isNum <- function(num) {
 #'
 #' @return rounded number to the specified order
 #' @export
-#' @seealso \code{\link{round}}, \code{\link{trunc}}, \code{\link{ceiling}}, \code{\link{floor}}
+#' @seealso \code{\link[base]{round}}, \code{\link[base]{trunc}}, \code{\link[base]{ceiling}}, \code{\link[base]{floor}}
 #'
 #' @examples
 #' round2(23.5)   # = 24, compare: round(23.5) = 24
@@ -444,7 +444,7 @@ str_find1 <- function(string, patternNoRegex) {
 #'
 #' @return output vector of the same length as the input vector
 #' @export
-#' @seealso \code{\link{fft}}, \code{\link{Re}}, \code{\link{Im}}, \code{\link{Mod}}, \code{\link{Conj}}
+#' @seealso \code{\link[stats]{fft}}, \code{\link[base]{Re}}, \code{\link[base]{Im}}, \code{\link[base]{Mod}}, \code{\link[base]{Conj}}
 #'
 #' @examples
 #' ifft(fft(1:5))

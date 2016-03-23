@@ -22,6 +22,6 @@ This is really the inverse of the fft function, so ifft(fft(x)) == x.
 ifft(fft(1:5))
 }
 \seealso{
-\code{\link{fft}}, \code{\link{Re}}, \code{\link{Im}}, \code{\link{Mod}}, \code{\link{Conj}}
+\code{\link[stats]{fft}}, \code{\link[base]{Re}}, \code{\link[base]{Im}}, \code{\link[base]{Mod}}, \code{\link[base]{Conj}}
 }
 
