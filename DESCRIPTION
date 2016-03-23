@@ -4,7 +4,7 @@ Title: Tomas' personal mix of utilities
 Version: 1.0.0
 Author: Tomas Boril
 Maintainer: Tomas Boril <borilt@gmail.com>
-Description: Mix of things that I missed in R. Matlab-like dot operator, stem plot (base plotting system), round2 with order, ifft etc.
+Description: Mix of things that I missed in R. Matlab-like colon operator, stem plot (base plotting system), round2 with order, ifft etc.
 License: MIT + file LICENSE
 LazyData: TRUE
 Depends:

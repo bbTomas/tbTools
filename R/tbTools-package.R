@@ -2,7 +2,7 @@
 #'
 #' Tomas' personal mix of utilities
 #'
-#' Mix of things that I missed in R. Matlab-like dot operator, stem plot (base plotting system), round2 with order, ifft etc.
+#' Mix of things that I missed in R. Matlab-like colon operator, stem plot (base plotting system), round2 with order, ifft etc.
 #'
 #' \code{\link{seqM}} Matlab-like behaviour of colon operator or linspace for creating sequences, for-loop friendly.
 #' \code{\link{round2}} Rounds a number to the specified order. Round half away from zero (this is the difference from built-in \code{round} function.)
