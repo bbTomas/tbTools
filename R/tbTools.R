@@ -1,4 +1,4 @@
-#' strtrim
+#' strTrim
 #'
 #' Trim leading and trailing whitespace in character string.
 #'
@@ -12,8 +12,8 @@
 #' @export
 #' @seealso \code{\link{isString}} for testing whether it is 1 character vector, \code{\link{str_contains}} for finding string in string without regexp, \code{\link{str_find}} for all indices without regexp, \code{\link{str_find1}} for the first index withoud regexp.
 #' @examples
-#' strtrim("      Hello World!    ")
-strtrim <- function (string) {
+#' strTrim("      Hello World!    ")
+strTrim <- function (string) {
     gsub("^\\s+|\\s+$", "", string)
 }
 
@@ -44,7 +44,7 @@ strtrim <- function (string) {
 # cyklus("seqM(3, 1, 1)")    #  jako Matlab
 #
 # x <- seq(0, 2*pi, by = 0.2)
-# stem(x, sin(x))
+# Stem(x, sin(x))
 
 
 #' seqM
@@ -196,7 +196,7 @@ seqM <- function(from, to, by=NA, length.out=NA) {
 }
 
 
-#' stem
+#' Stem
 #'
 #' Matlab-like stem plotting function for discrete series.
 #'
@@ -218,11 +218,11 @@ seqM <- function(from, to, by=NA, length.out=NA) {
 #'
 #' @examples
 #' t <- seqM(from = 0, to = 2*pi, length.out = 20)
-#' stem(t, sin(t))
-#' stem(t, sin(t), pch=21)
-#' stem(t, sin(t), pch=21, line="blue")
-#' stem(t, sin(t), main = "Default style")
-stem <- function(x,y,pch=16,linecol=1,clinecol=1,...){
+#' Stem(t, sin(t))
+#' Stem(t, sin(t), pch=21)
+#' Stem(t, sin(t), pch=21, line="blue")
+#' Stem(t, sin(t), main = "Default style")
+Stem <- function(x,y,pch=16,linecol=1,clinecol=1,...){
     if (missing(y)) {
         y = x
         x = 1:length(x) }

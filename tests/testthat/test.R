@@ -1,15 +1,15 @@
 context("strings")
 
 test_that("strtrim works", {
-    expect_equal(strtrim("      Hello World!    "), "Hello World!")
-    expect_equal(strtrim("Hello World!    "), "Hello World!")
-    expect_equal(strtrim("      Hello World!"), "Hello World!")
-    expect_equal(strtrim("Hello World!"), "Hello World!")
-    expect_equal(strtrim("   "), "")
-    expect_equal(strtrim(""), "")
-    expect_equal(strtrim(" ěšččřžýůú  "), "ěšččřžýůú")
-    expect_output(strtrim(NA), NA)
-    expect_equal(strtrim(1:5), as.character(1:5))
+    expect_equal(strTrim("      Hello World!    "), "Hello World!")
+    expect_equal(strTrim("Hello World!    "), "Hello World!")
+    expect_equal(strTrim("      Hello World!"), "Hello World!")
+    expect_equal(strTrim("Hello World!"), "Hello World!")
+    expect_equal(strTrim("   "), "")
+    expect_equal(strTrim(""), "")
+    expect_equal(strTrim(" ěšččřžýůú  "), "ěšččřžýůú")
+    expect_output(strTrim(NA), NA)
+    expect_equal(strTrim(1:5), as.character(1:5))
 })
 
 test_that("str_contains works", {
