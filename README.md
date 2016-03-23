@@ -1,7 +1,7 @@
 # tbTools
 *Tomas' personal mix of utilities*
 
-Mix of things that I missed in R. Matlab-like dot operator, stem plot (base plotting system), round2 with order, ifft etc.
+Mix of things that I missed in R. Matlab-like colon operator, stem plot (base plotting system), round2 with order, ifft etc.
 
 `seqM` Matlab-like behaviour of colon operator or linspace for creating sequences, for-loop friendly.
 
