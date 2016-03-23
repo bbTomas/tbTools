@@ -19,7 +19,7 @@ seqM(from, to, by = NA, length.out = NA)
 returns a vector of type "integer" or "double"
 }
 \description{
-Matlab-like behaviour of colon operator or linspace for creating sequances, for-loop friendly.
+Matlab-like behaviour of colon operator or linspace for creating sequences, for-loop friendly.
 }
 \details{
 Like \code{seq()} but with Matlab-like behavior ([: operator] with \code{by} or [linspace] with \code{length.out}).

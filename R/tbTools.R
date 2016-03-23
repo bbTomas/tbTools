@@ -49,7 +49,7 @@ strTrim <- function (string) {
 
 #' seqM
 #'
-#' Matlab-like behaviour of colon operator or linspace for creating sequances, for-loop friendly.
+#' Matlab-like behaviour of colon operator or linspace for creating sequences, for-loop friendly.
 #'
 #' Like \code{seq()} but with Matlab-like behavior ([: operator] with \code{by} or [linspace] with \code{length.out}).
 #'
@@ -332,11 +332,6 @@ isNum <- function(num) {
 }
 
 
-# Zaoukrouhlí na daný počet desetinných míst (order 1: desítky, 0:
-#                                                 jednotky, -1 desetiny, -2 setiny apod.)
-#
-# Př. round2(pi*100, -2), round2(pi*100, 2)
-
 
 #' round2
 #'
@@ -377,6 +372,8 @@ round2 <- function(x, order = 0) {
 
 #' str_contains
 #'
+#' Find string in another string (without regular expressions), returns TRUE / FALSE.
+#'
 #' @param string string in which we try to find something
 #' @param patternNoRegex string we want to find, "as it is" - no regular exprressions
 #'
@@ -396,6 +393,8 @@ str_contains <- function(string, patternNoRegex) {
 
 #' str_find
 #'
+#' Find string in another string (without regular expressions), returns indices of all occurences.
+#'
 #' @param string string in which we try to find something
 #' @param patternNoRegex string we want to find, "as it is" - no regular exprressions
 #'
@@ -413,10 +412,10 @@ str_find <- function(string, patternNoRegex) {
     return(indexy)
 }
 
-# Vrátí index první nalezené pozice podřetězce patternNoRegex ve string.
-# prádný vektor = nenalezeno, 1 ... první znak apod.
 
 #' str_find1
+#'
+#' Find string in another string (without regular expressions), returns indices of the first occurence only.
 #'
 #' @param string string in which we try to find something
 #' @param patternNoRegex string we want to find, "as it is" - no regular exprressions

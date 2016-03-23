@@ -15,7 +15,7 @@ str_find1(string, patternNoRegex)
 index of the first occurence only (1 = 1st character)
 }
 \description{
-str_find1
+Find string in another string (without regular expressions), returns indices of the first occurence only.
 }
 \examples{
 str_find1("Hello, hello, hello world", "ell")   # 2

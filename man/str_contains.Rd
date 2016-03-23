@@ -15,7 +15,7 @@ str_contains(string, patternNoRegex)
 TRUE / FALSE
 }
 \description{
-str_contains
+Find string in another string (without regular expressions), returns TRUE / FALSE.
 }
 \examples{
 str_contains("Hello world", "wor")  # TRUE

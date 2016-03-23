@@ -15,7 +15,7 @@ str_find(string, patternNoRegex)
 indices of all occurences (1 = 1st character)
 }
 \description{
-str_find
+Find string in another string (without regular expressions), returns indices of all occurences.
 }
 \examples{
 str_find("Hello, hello, hello world", "ell")   # 2 9 16
