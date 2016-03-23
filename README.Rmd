@@ -1,0 +1,124 @@
+---
+output: 
+  html_document: 
+    keep_md: yes
+---
+# tbTools
+*Tomas' personal mix of utilities*
+
+Mix of things that I missed in R. Matlab-like dot operator, stem plot (base plotting system), round2 with order, ifft etc.
+
+`seqM` Matlab-like behaviour of colon operator or linspace for creating sequences, for-loop friendly.
+
+`round2` Rounds a number to the specified order. Round half away from zero (this is the difference from built-in \code{round} function.)
+
+`ifft` Inverse Fast Fourier Transform (discrete FT), Matlab-like behavior.
+
+`Stem` Matlab-like stem plotting function for discrete series.
+
+`isInt` Returns TRUE / FALSE whether it is exactly 1 integer number (in fact, the class can be numeric but the number must be integer), non-missing
+
+`isNum` Returns TRUE / FALSE whether it is exactly 1 number (numeric or integer vector of length 1, non-missing)
+
+`isString` Returns TRUE / FALSE whether it is exactly 1 character string (character vector of length 1, non-missing)
+
+`strTrim` Trim leading and trailing whitespace in character string. Way faster than str_trim() or trimws().
+
+`str_contains` Find string in another string (without regular expressions), returns TRUE / FALSE.
+
+`str_find` Find string in another string (without regular expressions), returns indices of all occurences.
+
+`str_find1` Find string in another string (without regular expressions), returns indices of the first occurence only.
+
+### Installation
+
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("bbTomas/tbTools")
+```
+
+### Documentation
+Reference manual 1.0.0: [tbTools.pdf](tbTools.pdf).
+
+### Examples
+
+Finally Matlab-like sequences in R (dot operator with *by* or linspace with *length.out*). For-loop safe. Default step is always `by=+1` (no guessing) and if you do `seqM(3, 1, by=+1)` it produces an empty vector (so in for-loop, the statemens are not proceeded) instead of error (result of classic `seq` in R).
+
+```{r}
+library(tbTools)
+```
+
+#### seqM
+```{r}
+seqM(1, 3)
+seqM(1, 3, by=.8)
+seqM(1, 3, by=5)
+seqM(3, 1)
+seqM(3, 1, by=+1)
+seqM(3, 1, by=-1)
+seqM(3, 1, by=-3)
+seqM(1, 3, len=5)
+seqM(1, 3, len=3)
+seqM(1, 3, len=2)
+seqM(1, 3, len=1)
+seqM(1, 3, len=0)
+seqM(3, 1, len=3)
+```
+
+#### ifft
+```{r}
+ifft(fft(1:5))
+```
+
+#### isSomething
+```{r}
+isInt(2)
+isInt(2L)
+isInt(2.1)
+isInt(1:5)
+
+isNum(2L)
+isNum(-2.1)
+isNum("-2.1")
+
+isString("hello")
+isString(5)
+```
+
+#### round2
+```{r}
+round2(23.5)
+round2(23.4)
+round2(24.5)
+round2(-23.5)
+round2(-23.4)
+round2(-24.5)
+round2(123.456, -1) 
+round2(123.456, -2) 
+round2(123.456, 1)
+round2(123.456, 2)
+round2(123.456, 3)
+```
+
+#### Stem: Matlab-like stem plot for discrete series in R
+```{r}
+t <- seqM(from = 0, to = 2*pi, length.out = 20)
+Stem(t, sin(t))
+Stem(t, sin(t), pch=21, linecol = "blue")
+```
+
+### Character string operations
+```{r}
+strTrim(" Hello World! ")   # much faster than str_trim() in stringr package or trimws() in R3.2.0
+
+# easy and comfortable string operations without regular expressions
+str_contains("Hello world", "wor")
+str_contains("Hello world", "WOR")
+str_contains(tolower("Hello world"), tolower("wor"))
+
+str_find("Hello, hello, hello world", "ell")
+str_find("Hello, hello, hello world", "q")
+
+str_find1("Hello, hello, hello world", "ell")
+str_find1("Hello, hello, hello world", "q")
+```
