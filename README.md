@@ -38,7 +38,7 @@ Reference manual 1.0.0: [tbTools.pdf](tbTools.pdf).
 
 ### Examples
 
-Finally Matlab-like sequences in R (colon operator with *by* or linspace with *length.out*). For-loop safe. Default step is always `by=+1` (no guessing) and if you do `seqM(3, 1, by=+1)` it produces an empty vector (so in for-loop, the statemens are not proceeded) instead of error (result of classic `seq` in R).
+Finally Matlab-like sequences in R (colon operator with *by* or linspace with *length.out*). For-loop safe. Default step is always `by=+1` (no guessing) and if you do `seqM(3, 1, by=+1)` it produces an empty vector (so in for-loop, the statements are not proceeded) instead of error (result of classic `seq` in R).
 
 
 ```r
