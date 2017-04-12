@@ -41,4 +41,3 @@ Stem(t, sin(t), main = "Default style")
 \seealso{
 For interactive time-series plots, see package \code{dygraphs}.
 }
-

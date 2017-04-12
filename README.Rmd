@@ -22,6 +22,8 @@ Mix of things that I missed in R. Matlab-like colon operator, stem plot (base pl
 
 `isString` Returns TRUE / FALSE whether it is exactly 1 character string (character vector of length 1, non-missing)
 
+`isLogical` Returns TRUE / FALSE whether it is exactly 1 logical value (logical vector of length 1, non-missing)
+
 `strTrim` Trim leading and trailing whitespace in character string. Way faster than str_trim() or trimws().
 
 `str_contains` Find string in another string (without regular expressions), returns TRUE / FALSE.
@@ -38,7 +40,7 @@ devtools::install_github("bbTomas/tbTools")
 ```
 
 ### Documentation
-Reference manual 1.0.0: [tbTools.pdf](tbTools.pdf).
+Reference manual 1.0.1: [tbTools.pdf](tbTools.pdf).
 
 ### Examples
 
@@ -83,6 +85,9 @@ isNum("-2.1")
 
 isString("hello")
 isString(5)
+
+isLogical(FALSE)
+isLogical(0)
 ```
 
 #### round2

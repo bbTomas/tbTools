@@ -27,6 +27,5 @@ isInt(NA_integer_)
 isInt(integer(0))
 }
 \seealso{
-\code{\link{isNum}}, \code{\link{isString}}
+\code{\link{isNum}}, \code{\link{isLogical}}, \code{\link{isString}}
 }
-

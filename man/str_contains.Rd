@@ -26,4 +26,3 @@ str_contains("Hello world", "")  # TRUE
 \seealso{
 \code{\link{str_find}}, \code{\link{str_find1}}, \code{\link{isString}}
 }
-

@@ -97,6 +97,24 @@ test_that("isNum works", {
     expect_equal(isInt(mtcars), FALSE)
 })
 
+test_that("isLogical works", {
+    expect_equal(isLogical(TRUE), TRUE)
+    expect_equal(isLogical(FALSE), TRUE)
+    expect_equal(isLogical(T), TRUE)
+    expect_equal(isLogical(F), TRUE)
+    expect_equal(isLogical(1), FALSE)
+    expect_equal(isLogical(0), FALSE)
+    expect_equal(isLogical(2), FALSE)
+    expect_equal(isLogical(c(TRUE, TRUE)), FALSE)
+    expect_equal(isLogical(NaN), FALSE)
+    expect_equal(isLogical(logical(0)), FALSE)
+    expect_equal(isLogical(NA_integer_), FALSE)
+    expect_equal(isLogical(NA_real_), FALSE)
+    expect_equal(isLogical(NA), FALSE)
+    expect_equal(isLogical(integer(0)), FALSE)
+    expect_equal(isLogical(numeric(0)), FALSE)
+    expect_equal(isLogical(mtcars), FALSE)
+})
 
 
 context("round2")

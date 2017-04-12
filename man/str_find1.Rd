@@ -24,4 +24,3 @@ str_find1("Hello, hello, hello world", "q")     # integer(0)
 \seealso{
 \code{\link{str_find}}, \code{\link{str_contains}}, \code{\link{isString}}
 }
-

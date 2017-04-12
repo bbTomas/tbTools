@@ -46,6 +46,7 @@ and also an empty vector for seq(3, 1, by = 1) (not an error). This is solved by
   seqM(3, 1, len=3) \tab [1] 3 2 1          \tab       linspace(3,1,3) \tab the same                \tab   the same  \cr
 }
 }
+
 \examples{
 seqM(1, 3)
 seqM(1, 3, by=.8)
@@ -67,4 +68,3 @@ seqM(3, 1, len=3)
 \seealso{
 \code{\link{round2}}, \code{\link{isNum}}, \code{\link{isInt}}, \code{\link{ifft}}.
 }
-

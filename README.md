@@ -17,6 +17,8 @@ Mix of things that I missed in R. Matlab-like colon operator, stem plot (base pl
 
 `isString` Returns TRUE / FALSE whether it is exactly 1 character string (character vector of length 1, non-missing)
 
+`isLogical` Returns TRUE / FALSE whether it is exactly 1 logical value (logical vector of length 1, non-missing)
+
 `strTrim` Trim leading and trailing whitespace in character string. Way faster than str_trim() or trimws().
 
 `str_contains` Find string in another string (without regular expressions), returns TRUE / FALSE.
@@ -34,7 +36,7 @@ devtools::install_github("bbTomas/tbTools")
 ```
 
 ### Documentation
-Reference manual 1.0.0: [tbTools.pdf](tbTools.pdf).
+Reference manual 1.0.1: [tbTools.pdf](tbTools.pdf).
 
 ### Examples
 
@@ -239,6 +241,22 @@ isString(5)
 ## [1] FALSE
 ```
 
+```r
+isLogical(FALSE)
+```
+
+```
+## [1] TRUE
+```
+
+```r
+isLogical(0)
+```
+
+```
+## [1] FALSE
+```
+
 #### round2
 
 ```r
@@ -336,13 +354,13 @@ t <- seqM(from = 0, to = 2*pi, length.out = 20)
 Stem(t, sin(t))
 ```
 
-![](README_files/figure-html/unnamed-chunk-7-1.png)
+![](README_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
 ```r
 Stem(t, sin(t), pch=21, linecol = "blue")
 ```
 
-![](README_files/figure-html/unnamed-chunk-7-2.png)
+![](README_files/figure-html/unnamed-chunk-7-2.png)<!-- -->
 
 ### Character string operations
 

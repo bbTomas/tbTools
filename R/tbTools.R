@@ -226,11 +226,11 @@ Stem <- function(x,y,pch=16,linecol=1,clinecol=1,...){
     if (missing(y)) {
         y = x
         x = 1:length(x) }
-    plot(x,y,pch=pch,col=linecol,...)
+    graphics::plot(x,y,pch=pch,col=linecol,...)
     for (i in 1:length(x)){
-        lines(c(x[i],x[i]), c(0,y[i]),col=linecol)
+        graphics::lines(c(x[i],x[i]), c(0,y[i]),col=linecol)
     }
-    lines(c(x[1]-2,x[length(x)]+2), c(0,0),col=clinecol)
+    graphics::lines(c(x[1]-2,x[length(x)]+2), c(0,0),col=clinecol)
 }
 
 
@@ -242,7 +242,7 @@ Stem <- function(x,y,pch=16,linecol=1,clinecol=1,...){
 #'
 #' @return TRUE / FALSE
 #' @export
-#' @seealso \code{\link{isNum}}, \code{\link{isString}}
+#' @seealso \code{\link{isNum}}, \code{\link{isLogical}}, \code{\link{isString}}
 #'
 #' @examples
 #' isInt(2)
@@ -278,7 +278,7 @@ isInt <- function(num) {
 #'
 #' @return TRUE / FALSE
 #' @export
-#' @seealso \code{\link{isInt}}, \code{\link{isNum}}
+#' @seealso \code{\link{isInt}}, \code{\link{isNum}}, \code{\link{isLogical}}
 #'
 #' @examples
 #' isString("hello")
@@ -306,7 +306,7 @@ isString <- function(string) {
 #'
 #' @return TRUE / FALSE
 #' @export
-#' @seealso \code{\link{isInt}}, \code{\link{isString}}
+#' @seealso \code{\link{isInt}}, \code{\link{isLogical}}, \code{\link{isString}}
 #'
 #' @examples
 #' isNum(2)
@@ -326,6 +326,38 @@ isNum <- function(num) {
         return(FALSE)
 
     if (is.na(num))
+        return(FALSE)
+
+    return(TRUE)
+}
+
+#' isLogical
+#'
+#' Returns TRUE / FALSE whether it is exactly 1 logical value, non-missing
+#'
+#' @param logical variable to be tested
+#'
+#' @return TRUE / FALSE
+#' @export
+#' @seealso \code{\link{isNum}}, \code{\link{isInt}}, \code{\link{isString}}
+#'
+#' @examples
+#' isLogical(TRUE)
+#' isLogical(FALSE)
+#' isLogical(1)
+#' isLogical(0)
+#' isLogical(2)
+#' isLogical(NA)
+#' isLogical(NaN)
+#' isLogical(logical(0))
+isLogical <- function(logical) {
+    if (!("logical" %in% class(logical)))
+        return(FALSE)
+
+    if (length(logical) != 1)
+        return(FALSE)
+
+    if (is.na(logical))
         return(FALSE)
 
     return(TRUE)
@@ -449,5 +481,5 @@ str_find1 <- function(string, patternNoRegex) {
 #' @examples
 #' ifft(fft(1:5))
 ifft <- function(sig) {
-    return(fft(sig, inverse = TRUE) / length(sig))
+    return(stats::fft(sig, inverse = TRUE) / length(sig))
 }

@@ -3,6 +3,7 @@
 export(Stem)
 export(ifft)
 export(isInt)
+export(isLogical)
 export(isNum)
 export(isString)
 export(round2)

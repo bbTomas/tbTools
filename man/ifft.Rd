@@ -24,4 +24,3 @@ ifft(fft(1:5))
 \seealso{
 \code{\link[stats]{fft}}, \code{\link[base]{Re}}, \code{\link[base]{Im}}, \code{\link[base]{Mod}}, \code{\link[base]{Conj}}
 }
-

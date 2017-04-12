@@ -26,4 +26,3 @@ strTrim("      Hello World!    ")
 \seealso{
 \code{\link{isString}} for testing whether it is 1 character vector, \code{\link{str_contains}} for finding string in string without regexp, \code{\link{str_find}} for all indices without regexp, \code{\link{str_find1}} for the first index withoud regexp.
 }
-

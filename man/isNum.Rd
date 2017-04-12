@@ -27,6 +27,5 @@ isNum(NA_real_)
 isNum(numeric(0))
 }
 \seealso{
-\code{\link{isInt}}, \code{\link{isString}}
+\code{\link{isInt}}, \code{\link{isLogical}}, \code{\link{isString}}
 }
-

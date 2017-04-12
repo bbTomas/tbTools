@@ -38,4 +38,3 @@ round2(-123.456, 3)  # 0
 \seealso{
 \code{\link[base]{round}}, \code{\link[base]{trunc}}, \code{\link[base]{ceiling}}, \code{\link[base]{floor}}
 }
-

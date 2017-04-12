@@ -22,6 +22,5 @@ isString(c("hello", "world"))
 isString(NA_character_)
 }
 \seealso{
-\code{\link{isInt}}, \code{\link{isNum}}
+\code{\link{isInt}}, \code{\link{isNum}}, \code{\link{isLogical}}
 }
-

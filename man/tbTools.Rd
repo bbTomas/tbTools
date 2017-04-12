@@ -20,6 +20,7 @@ Mix of things that I missed in R. Matlab-like colon operator, stem plot (base pl
 \code{\link{isInt}} Returns TRUE / FALSE whether it is exactly 1 integer number (in fact, the class can be numeric but the number must be integer), non-missing
 \code{\link{isNum}} Returns TRUE / FALSE whether it is exactly 1 number (numeric or integer vector of length 1, non-missing)
 \code{\link{isString}} Returns TRUE / FALSE whether it is exactly 1 character string (character vector of length 1, non-missing)
+\code{\link{isLogical}} Returns TRUE / FALSE whether it is exactly 1 logical value (TRUE or FALSE), non-missing
 
 \code{\link{strTrim}} Trim leading and trailing whitespace in character string. Way faster than str_trim() or trimws().
 
@@ -27,4 +28,3 @@ Mix of things that I missed in R. Matlab-like colon operator, stem plot (base pl
 \code{\link{str_find}} Find string in another string (without regular expressions), returns indices of all occurences.
 \code{\link{str_find1}} Find string in another string (without regular expressions), returns indices of the first occurence only.
 }
-
