@@ -32,7 +32,7 @@ test_that("str_find1 works", {
 
 context("sequence")
 
-test_that("strtrim works", {
+test_that("seqM works", {
     expect_equal(seqM(1, 3, 0.5), c(1, 1.5, 2, 2.5, 3))
     expect_equal(seqM(1, 3), 1:3)
     expect_equal(seqM(1, 3, by=.8), c(1, 1.8, 2.6))
@@ -48,7 +48,26 @@ test_that("strtrim works", {
     expect_warning(seqM(1, 3, len=0), "length.out == 0, return empty vector")
     expect_warning(seqM(1, 3, len=-2))
     expect_equal(seqM(3, 1, len=3), c(3, 2, 1))
-
+    expect_error(seqM(1, 3, 1, 3))
+    expect_error(seqM(1, 3, 1, 2))
+    expect_equal(seqM(from=2, by=1, len=3), c(2, 3, 4))
+    expect_equal(seqM(from=2, by=-1, len=3), c(2, 1, 0))
+    expect_equal(seqM(to=2, by=1, len=3), c(0, 1, 2))
+    expect_equal(seqM(to=2, by=-1, len=3), c(4, 3, 2))
+    expect_equal(seqM(from=2, by=0, len=3), c(2, 2, 2))
+    expect_equal(seqM(to=2, by=0, len=3), c(2, 2, 2))
+    expect_warning(seqM(from=1, by=1, len=0), "length.out == 0, return empty vector")
+    expect_warning(seqM(to=1, by=1, len=0), "length.out == 0, return empty vector")
+    expect_equal(class(seqM(3, 1, len=3)), "numeric")
+    expect_equal(class(seqM(1, 3, len=3)), "numeric")
+    expect_equal(class(seqM(3, 1, by=-1)), "integer")
+    expect_equal(class(seqM(3, 1, by=-5)), "integer")
+    expect_equal(class(seqM(1, 3, by=1)), "integer")
+    expect_equal(class(seqM(1, 3, by=2)), "integer")
+    expect_equal(class(seqM(from=1, by=3, len=5)), "integer")
+    expect_equal(class(seqM(to=1, by=3, len=5)), "integer")
+    expect_equal(class(seqM(from=1, by=-3, len=5)), "integer")
+    expect_equal(class(seqM(to=1, by=-3, len=5)), "integer")
 })
 
 

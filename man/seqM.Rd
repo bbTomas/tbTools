@@ -4,7 +4,7 @@
 \alias{seqM}
 \title{seqM}
 \usage{
-seqM(from, to, by = NA, length.out = NA)
+seqM(from = NA, to = NA, by = NA, length.out = NA)
 }
 \arguments{
 \item{from}{starting value of the sequence (the first number)}

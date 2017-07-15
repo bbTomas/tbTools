@@ -101,17 +101,17 @@ strTrim <- function (string) {
 #'
 #'
 #'
-seqM <- function(from, to, by=NA, length.out=NA) {
+seqM <- function(from=NA, to=NA, by=NA, length.out=NA) {
     # nonsense or default parameters
 
-    if (class(from) != "numeric" & class(from) != "integer")
+    if (!is.na(from) & class(from) != "numeric" & class(from) != "integer")
         stop("'from' must be numeric or integer")
-    if (length(from) != 1)
+    if (!is.na(from) & length(from) != 1)
         stop("'from' must be 1 number")
 
-    if (class(to) != "numeric" & class(to) != "integer")
+    if (!is.na(to) & class(to) != "numeric" & class(to) != "integer")
         stop("'to' must be numeric or integer")
-    if (length(to) != 1)
+    if (!is.na(to) & length(to) != 1)
         stop("'to' must be 1 number")
 
     if (length(by) != 1)
@@ -128,8 +128,57 @@ seqM <- function(from, to, by=NA, length.out=NA) {
             stop("'length.out' must be numeric or integer")
     }
 
-    if (!is.na(by) & !is.na(length.out))
-        stop("too many arguments, cannot set 'by' and 'length.out' together")
+    if (!is.na(by) & !is.na(length.out)) {
+        if (!is.na(from) & !is.na(to)) {
+            stop("too many arguments, cannot set 'by' and 'length.out' together with both 'from' and 'to'")
+        }
+
+        # VAR 3) length.out + by
+        if (!isInt(length.out)) {
+            len <- trunc(length.out)
+            warning(paste0("length.out is not integer (length.out=", length.out, "), truncating it to: ", len))
+            length.out <- len
+        }
+        if (length.out == 0) {
+            warning("length.out == 0, return empty vector")
+            return(integer(0))
+        }
+        if (length.out < 0) {
+            warning(paste0("length.out < 0 (length.out=", length.out, "), return empty vector"))
+            return(integer(0))
+        }
+
+        if (is.na(to)) {  # from
+            if (isInt(from) & isInt(by)) {
+                outInt <- TRUE
+                from <- as.integer(from)
+                by <- as.integer(by)
+            }
+            else {
+                outInt <- FALSE
+            }
+
+            if (outInt)
+                return(seq.int(from = from, by = by, length.out = length.out))
+            else
+                return(seq(from = from, by = by, length.out = length.out))
+
+        } else {          # to
+            if (isInt(to) & isInt(by)) {
+                outInt <- TRUE
+                to <- as.integer(to)
+                by <- as.integer(by)
+            }
+            else {
+                outInt <- FALSE
+            }
+
+            if (outInt)
+                return(seq.int(to = to, by = by, length.out = length.out))
+            else
+                return(seq(to = to, by = by, length.out = length.out))
+        }
+    }
 
     if (is.na(by) & is.na(length.out))
         by <- 1

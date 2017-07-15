@@ -36,7 +36,7 @@ devtools::install_github("bbTomas/tbTools")
 ```
 
 ### Documentation
-Reference manual 1.0.1: [tbTools.pdf](tbTools.pdf).
+Reference manual: [tbTools.pdf](tbTools.pdf).
 
 ### Examples
 
@@ -155,6 +155,46 @@ seqM(3, 1, len=3)
 
 ```
 ## [1] 3 2 1
+```
+
+```r
+seqM(from=2, by=1, len=3)
+```
+
+```
+## [1] 2 3 4
+```
+
+```r
+seqM(from=2, by=-1, len=3)
+```
+
+```
+## [1] 2 1 0
+```
+
+```r
+seqM(to=2, by=1, len=3)
+```
+
+```
+## [1] 0 1 2
+```
+
+```r
+seqM(to=2, by=-1, len=3)
+```
+
+```
+## [1] 4 3 2
+```
+
+```r
+seqM(from=2, by=0, len=3)
+```
+
+```
+## [1] 2 2 2
 ```
 
 #### ifft

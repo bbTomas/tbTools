@@ -1,7 +1,7 @@
 Package: tbTools
 Type: Package
 Title: Tomas' personal mix of utilities
-Version: 1.0.1
+Version: 1.0.2
 Author: Tomas Boril
 Maintainer: Tomas Boril <borilt@gmail.com>
 Description: Mix of things that I missed in R. Matlab-like colon operator, stem plot (base plotting system), round2 with order, ifft etc.
